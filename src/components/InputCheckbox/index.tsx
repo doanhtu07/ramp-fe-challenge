@@ -12,7 +12,7 @@ export const InputCheckbox: InputCheckboxComponent = ({ id, checked = false, dis
           "RampInputCheckbox--label-checked": checked,
           "RampInputCheckbox--label-disabled": disabled,
         })}
-        onClick={() => onChange(!checked)}
+        onClick={() => onChange(!checked)} // Bug 2: Approve checkbox not working
       />
       <input
         id={inputId}

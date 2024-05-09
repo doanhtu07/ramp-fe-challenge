@@ -18,6 +18,12 @@ export function InputSelect<TItem>({
     left: 0,
   })
 
+  /*
+    Bug 1: Select dropdown doesn't scroll with rest of the page
+    - Have an anchor state
+    - Have an effect to update the drop position based on anchor
+  */
+
   // Extra states
   const [anchor, setAnchor] = useState<EventTarget>()
 

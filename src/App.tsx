@@ -25,6 +25,7 @@ export function App() {
     transactionsByEmployeeUtils.invalidateData()
     await employeeUtils.fetchAll()
 
+    // Bug 5: Employees filter not available during loading more data
     setIsLoadingEmployees(false)
 
     await paginatedTransactionsUtils.fetchAll()
@@ -67,6 +68,7 @@ export function App() {
               return
             }
 
+            // Bug 3: Cannot select _All Employees_ after selecting an employee
             // All employees case
             if (newValue.id === "") {
               await loadAllTransactions()
@@ -82,6 +84,7 @@ export function App() {
         <div className="RampGrid">
           <Transactions transactions={transactions} />
 
+          {/* Bug 6: View more button not working as expected */}
           {transactions !== null &&
             transactionsByEmployee === null &&
             paginatedTransactions?.nextPage !== null && (

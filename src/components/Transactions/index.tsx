@@ -13,6 +13,8 @@ export const Transactions: TransactionsComponent = ({ transactions }) => {
         transactionId,
         value: newValue,
       })
+
+      // Bug 7: Approving a transaction won't persist the new value
       clearCacheByEndpoint(["paginatedTransactions", "transactionsByEmployee"])
     },
     [fetchWithoutCache, clearCacheByEndpoint]
